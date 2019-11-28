@@ -102,6 +102,11 @@ class Net_DNS2_Updater extends Net_DNS2
         // make sure the opcode on the packet is set to UPDATE
         //
         $this->_packet->header->opcode = Net_DNS2_Lookups::OPCODE_UPDATE;
+        
+        //
+        // clear RD bit
+        //
+        $this->_packet->header->rd = 0;
     }
 
     /**
